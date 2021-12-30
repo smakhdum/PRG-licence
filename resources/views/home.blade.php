@@ -25,7 +25,7 @@
       <th scope="col">Contact person </th>
       <th scope="col">Contact Mobile </th>
       <th scope="col">View Licence </th>
-      <th scope="col">Delete </th>
+    
       
     </tr>
   </thead>
