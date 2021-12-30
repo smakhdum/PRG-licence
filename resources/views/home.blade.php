@@ -47,7 +47,6 @@
       <td >
       <a href="{{URL::to('/view-licence',$item->id)}}"> <img src="{{asset('licence_img/'.$item->file_path) }}" width="100px" alt="Not Found"></a>
       </td>
-      <td><button type="button" class="btn btn-danger">Danger</button></td>
     </tr>
     
     @endforeach

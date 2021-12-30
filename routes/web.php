@@ -40,5 +40,5 @@ Route::post('/store-licence',[LicenceController::class,'store'] );
 
 Route::get('/',[HomeController::class,'index'] );
 Route::get('/view-licence/{id}',[HomeController::class,'show'] );
-
+Route::get('delete-licence/{id}',[LicenceController::class,'destroy']);
 // Route::resource('licence', 'App\Http\Controllers\LicenceController'); 

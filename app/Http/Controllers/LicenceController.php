@@ -114,6 +114,8 @@ class LicenceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $licence = \App\Models\Licence::find($id);
+        $licence->delete();
+        return redirect('/')->with('success', true);
     }
 }

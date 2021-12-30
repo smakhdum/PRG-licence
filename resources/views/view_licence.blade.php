@@ -26,6 +26,10 @@
   </tbody> 
 </table>
 <img src="{{asset('licence_img/'.$data->file_path) }}" width="" alt="Not Found">
+<br>
+<br>
+<a href="{{url('delete-licence/'.$data->id)}}" class="btn btn-danger btn-m">Delete</a>
+
     </div>
     <br>
     <br>
