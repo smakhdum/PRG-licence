@@ -8,9 +8,9 @@
     <p></p>
     <h2 class=" text-white  text-center font-weight-bold"> PRG LICENCE MANAGEMENT SYSTEM</h2>
     </div>    
-</div>
+
     <table class="table table-striped table-hover">
-  <thead>
+    <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Company name </th>
@@ -25,32 +25,36 @@
       <th scope="col">Contact person </th>
       <th scope="col">Contact Mobile </th>
       <th scope="col">View Licence </th>
+      <th scope="col">Delete </th>
+      
     </tr>
   </thead>
   <tbody>
-  @foreach($data as $item)
+  @foreach($data as $key=>$item)
     <tr>
-      <td >{{$item->id}}</td>
+      <td >{{$key+1}}</td>
       <td >{{$item->company_name}}</td>
       <td >{{$item->company_type}}</td>
       <td >{{$item->company_location}}</td>
       <td >{{$item->licence_name}}</td>
       <td >{{$item->licence_number}}</td>
-      <td >{{$item->expiry_date}}</td>
+      <td class="bg-warning">{{$item->expiry_date}}</td>
       <td >{{$item->remarks}}</td>
       <td >{{$item->responsible}}</td>
       <td >{{$item->authority_name}}</td>
       <td >{{$item->contact_person}}</td>
       <td >{{$item->contact_mobile}}</td>
-
       <td >
       <a href="{{URL::to('/view-licence',$item->id)}}"> <img src="{{asset('licence_img/'.$item->file_path) }}" width="100px" alt="Not Found"></a>
       </td>
+      <td><button type="button" class="btn btn-danger">Danger</button></td>
     </tr>
+    
     @endforeach
   </tbody>
 </table>
+{{ $data->links() }}
+        </div>
         </div>    
     </div> 
-
 @endsection

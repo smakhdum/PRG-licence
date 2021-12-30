@@ -17,10 +17,10 @@ class HomeController extends Controller
     public function index()
     {
         $data = Company::join('licences','companies.id' , '=','licences.company_id' )
-        ->join('authorities','licences.authority_id' , '=', 'authorities.id')
-        ->get(['licences.id','licences.licence_name', 'licences.licence_number','licences.expiry_date','licences.remarks','licences.responsible','licences.file_path',
-   'companies.company_name', 'companies.company_type','companies.company_location', 
-    'authorities.authority_name','authorities.contact_person', 'authorities.contact_mobile' ])->sortBy('company_name');
+        ->join('authorities','licences.authority_id' , '=', 'authorities.id')->orderby('expiry_date')
+        ->paginate(5,['licences.id','licences.licence_name', 'licences.licence_number','licences.expiry_date','licences.remarks','licences.responsible','licences.file_path',
+        'companies.company_name', 'companies.company_type','companies.company_location', 
+         'authorities.authority_name','authorities.contact_person', 'authorities.contact_mobile' ]);
 
         return view('home',compact('data'));
     }
